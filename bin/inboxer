@@ -1,0 +1,45 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'gli'
+require 'yaml'
+require 'pony'
+require 'premailer'
+require 'inboxer'
+
+include GLI
+
+program_desc 'Send emails of HTML pages to mailing list based on configuration file'
+
+version Inboxer::VERSION
+
+desc 'Display what is going to happen'
+command :view do |c|
+  c.action do |global_options, options, args|
+    raise "Must supply configuration file as argument" unless args.size == 1
+    puts "A nested set of web addresses to capture and the email addresses to send them to" 
+    puts
+    puts File.open(args.first).read
+  end
+end
+
+desc 'Send all emails described in configuration file'
+command :send do |c|
+  c.action do |global_options, options, args|
+    raise "Must supply configuration file as argument" unless args.size == 1
+    report = Inboxer::Reporter.new(args.first)
+    report.send!
+  end
+end
+
+desc 'Send all emails described in configuration file as PDF'
+command :pdf do |c|
+  c.action do |global_options, options, args|
+    raise "Must supply configuration file as argument" unless args.size == 1
+    report = Inboxer::Reporter.new(args.first)
+    report.send_pdf!
+  end
+end
+
+
+exit GLI.run(ARGV)

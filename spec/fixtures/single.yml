@@ -1,0 +1,6 @@
+-
+  URL: http://example.com
+  Subject: Example report
+  From: from@example.com
+  Recipients:
+    - test@example.com
