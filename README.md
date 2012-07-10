@@ -5,6 +5,9 @@ well, anything. But sometimes going to view the dashboards is too much
 effort and what you want it a regular email report. Or maybe your boss
 wants a nice weekly or month summary.
 
+[![Build
+Status](https://secure.travis-ci.org/garethr/inboxer.png)](http://travis-ci.org/garethr/inboxer)
+
 # Usage
 
     > inboxer
