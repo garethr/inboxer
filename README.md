@@ -8,7 +8,7 @@ wants a nice weekly or month summary.
 # Usage
 
     > inboxer
-    Send emails of HTML pages to mailing list based on configuration file
+    Send emails of HTML pages to a mailing list based on configuration file
 
     usage: inboxer [global options] command [command options]
 
@@ -19,6 +19,7 @@ wants a nice weekly or month summary.
 
     Commands:
         help - Shows list of commands or help for one command
+        pdf  - Send all emails described in configuration file as PDF
         send - Send all emails described in configuration file
         view - Display what is going to happen
 
